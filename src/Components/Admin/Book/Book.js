@@ -25,37 +25,9 @@ const Book = () => {
   console.log(servicesFind);
 
   const { register, errors, handleSubmit } = useForm();
-  // const onSubmit = (data) => {
-  //     console.log(data)
-  // };
   const onSubmit = (data) => {
     console.log(data);
     setShippingData(data);
-    // const eventData = {
-    //     name: data.first,
-    //     lastName: data.last,
-    //     email:data.email,
-    //     phone:data.mobile,
-    //     ...loggedIn,
-    //     service:servicesFind,
-    //     orderTime: new Date()
-
-    // }
-    // const url = `http://localhost:5000/addOrder`
-    // fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(eventData)
-    // })
-    //     .then(res => {
-    //         if (res) {
-    //             alert('Your event has been added successfully');
-    //         }
-    //     })
-  };
-
   const handlePaymentSuccess = (paymentId) => {
     const eventData = {
       firstName: shippingData.first,
@@ -80,8 +52,6 @@ const Book = () => {
       }
     });
   };
-  //style={{ boxShadow: "0 0 10px grey" }}
-
   return (
     <div className="row">
       <div
