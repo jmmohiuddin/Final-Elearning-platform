@@ -1,66 +1,66 @@
 import React from "react";
-import "./ContactForm.css";
 import { useForm } from "react-hook-form";
-
-const ContactForm = () => {
+import swal from "sweetalert";
+const AddReview = () => {
   const { register, errors, handleSubmit } = useForm();
-  //   const onSubmit = (data) => {
-  //     console.log(data);
-  //   };
+
   const onSubmit = (data) => {
+    console.log(data);
     const eventData = {
-      AddEvents: data,
+      name: data.name,
+      description: data.message,
+      company: data.company,
     };
-    const url = `http://localhost:5055/contact`;
+    const url = `http://localhost:5000/feedback`;
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(eventData),
-    }).then((res) => console.log("server side response", res));
+    }).then((res) => {
+      if (res) {
+        swal({
+          title: "Your review has been added!",
+          text: "Thanks for given this review!",
+          icon: "success",
+          button: "Ok",
+        });
+      }
+    });
   };
+
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>First name</label>
-        <input
-          type="text"
-          {...register("First name", { required: true, maxLength: 80 })}
-        />
-        <label>Last name</label>
-        <input
-          type="text"
-          {...register("Last name", { required: true, maxLength: 100 })}
-        />
-        <label>Email</label>
-        <input
-          type="text"
-          {...register("Email", {
-            required: true,
-            pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-          })}
-        />
-        <label>Message</label>
-        <textarea
-          type="text"
-          rows="6"
-          name="message"
-          {...register("message")}
-        />
-        <label>Mobile number</label>
-        <input
-          type="tel"
-          {...register("Mobile number", {
-            required: true,
-            maxLength: 11,
-            minLength: 8,
-          })}
-        />
-        <input type="submit" />
-      </form>
+      <div className="row">
+        <div className="col-md-12" style={{ backgroundColor: "black" }}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              {...register("name", { required: true, maxLength: 80 })}
+            />
+            <label>Problem Name</label>
+            <input
+              type="text"
+              name="problem"
+              {...register("problem", { required: true, maxLength: 120 })}
+            />
+
+            <label>Description of Problem</label>
+            <textarea
+              type="text"
+              rows="6"
+              name="message"
+              {...register("message")}
+            />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default ContactForm;
+export default AddReview;
