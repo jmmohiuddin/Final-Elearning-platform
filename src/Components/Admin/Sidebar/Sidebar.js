@@ -5,10 +5,8 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const { serviceOption } = useContext(UserContext);
   const [serviceFakeData, setServiceFakeData] = serviceOption;
-
   const { log } = useContext(UserContext);
   const [loggedIn, setLoggedIn] = log;
-
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
     fetch("http://localhost:5000/isAdmin", {
