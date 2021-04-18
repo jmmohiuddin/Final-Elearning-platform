@@ -66,7 +66,7 @@ const AddService = () => {
             <input
               name="name"
               className="form-control"
-              defaultValue="Product Name"
+              placeholder="service Name"
               {...register("name")}
             />
           </div>
@@ -75,11 +75,11 @@ const AddService = () => {
               Add Price
             </label>
             <input
-              name="price"
+              name="cost"
               type="number"
               className="form-control"
-              defaultValue="20"
-              {...register("price")}
+              placeholder="cost"
+              {...register("cost")}
             />
           </div>
           <div className="mb-3">
@@ -89,8 +89,9 @@ const AddService = () => {
             <textarea
               type="text"
               rows="6"
-              name="message"
-              {...register("message")}
+              name="Description"
+              placeholder="Description"
+              {...register("Description")}
             />
           </div>
           <div className="mb-3">
