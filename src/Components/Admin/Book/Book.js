@@ -28,6 +28,8 @@ const Book = () => {
   const onSubmit = (data) => {
     console.log(data);
     setShippingData(data);
+  };
+
   const handlePaymentSuccess = (paymentId) => {
     const eventData = {
       firstName: shippingData.first,
@@ -52,6 +54,8 @@ const Book = () => {
       }
     });
   };
+  //style={{ boxShadow: "0 0 10px grey" }}
+
   return (
     <div className="row">
       <div
