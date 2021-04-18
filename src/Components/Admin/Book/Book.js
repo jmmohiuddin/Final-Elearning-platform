@@ -16,7 +16,7 @@ const Book = () => {
 
   const [specificService, setSpecificService] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://evening-basin-34226.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setSpecificService(data));
   }, []);
@@ -41,7 +41,7 @@ const Book = () => {
       orderTime: new Date(),
       paymentId,
     };
-    const url = `http://localhost:5000/addOrder`;
+    const url = `https://evening-basin-34226.herokuapp.com/addOrder`;
     fetch(url, {
       method: "POST",
       headers: {

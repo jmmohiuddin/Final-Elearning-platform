@@ -11,7 +11,7 @@ const AddReview = () => {
       description: data.message,
       company: data.company,
     };
-    const url = `http://localhost:5000/feedback`;
+    const url = `https://evening-basin-34226.herokuapp.com/feedback`;
     fetch(url, {
       method: "POST",
       headers: {
