@@ -106,8 +106,6 @@ const Book = () => {
               name="mobile"
               {...register("mobile", {
                 required: true,
-                maxLength: 11,
-                minLength: 8,
               })}
             />
             <input type="submit" />

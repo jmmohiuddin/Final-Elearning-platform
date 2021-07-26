@@ -5,9 +5,6 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
-        <Link className="navbar-brand ps-5 text-black" to="/">
-          Programmer
-        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,7 +28,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item pe-3">
-              <Link className="nav-link text-black" to="#">
+              <Link className="nav-link text-black" to="/service">
                 Services
               </Link>
             </li>

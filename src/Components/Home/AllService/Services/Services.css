@@ -1,0 +1,20 @@
+.allBook {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    grid-column-gap: 10px;
+}
+
+@media (max-width: 1000px) {
+    .allBook {
+        grid-template-columns: auto auto;
+        grid-column-gap: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .allBook {
+        grid-template-columns: auto;
+        grid-column-gap: 0px;
+    }
+}

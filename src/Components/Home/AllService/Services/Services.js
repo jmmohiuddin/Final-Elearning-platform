@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../../App";
-
+import "./Services.css";
 import Service from "../Service/Service";
 
 const Services = () => {
@@ -13,17 +13,8 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <div className="justify-content-center align-items-center d-flex">
-        <div
-          className="text-center"
-          style={{ borderBottom: "5px solid #f29702" }}
-        >
-          <h1>Services</h1>
-          <h4>We Try to Give Our Best Services To Our Customer</h4>
-        </div>
-      </div>
       <div className="container">
-        <div className="row ms-5">
+        <div className="container allBook">
           {serviceFakeData.map((service) => (
             <Service service={service}></Service>
           ))}
