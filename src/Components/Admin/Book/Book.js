@@ -60,68 +60,69 @@ const Book = () => {
   return (
     <main>
       <Navbar></Navbar>;
-      <section className="row">
-        <div className="col-6 bg-aqua" style={{ backgroundColor: "gray" }}>
-          <div
-            className="col-md-6 mt-5 rounded-3"
-            style={{ display: shippingData ? "none" : "block" }}
-          >
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <label>First name</label>
-              <input
-                type="text"
-                name="first"
-                {...register("first", { required: true })}
-              />
-              <label>Last name</label>
-              <input
-                type="text"
-                name="last"
-                {...register("last", { required: true })}
-              />
-              <label>Email</label>
-              <input
-                type="text"
-                name="email"
-                {...register("email", {
-                  required: true,
-                })}
-              />
-              <label>Mobile number</label>
-              <input
-                type="tel"
-                name="mobile"
-                {...register("mobile", {
-                  required: true,
-                })}
-              />
-              <input type="submit" />
-            </form>
-          </div>
-        </div>
-        <div className="col-4 bg-blue">
-          <div
-            className="col-md-6 mt-5"
-            style={{ display: shippingData ? "block" : "none" }}
-          >
-            <h1>Please Pay</h1>
-            <div className="mt-3 mb-3">
-              <img
-                className="img-fluid"
-                style={{ width: "100px", borderRadius: "50%" }}
-                src={servicesFind?.imageURL}
-                alt=""
-              />
+      <section className="container-md">
+        <section className="row bg-secondary">
+          <div className="col-7 ">
+            <div
+              className=" mt-5 rounded-3 "
+              style={{ display: shippingData ? "none" : "block" }}
+            >
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <label>First name</label>
+                <input
+                  type="text"
+                  name="first"
+                  {...register("first", { required: true })}
+                />
+                <label>Last name</label>
+                <input
+                  type="text"
+                  name="last"
+                  {...register("last", { required: true })}
+                />
+                <label>Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  {...register("email", {
+                    required: true,
+                  })}
+                />
+                <label>Mobile number</label>
+                <input
+                  type="tel"
+                  name="mobile"
+                  {...register("mobile", {
+                    required: true,
+                  })}
+                />
+                <input type="submit" />
+              </form>
             </div>
-            <div className="mt-3 mb-3 ms-3">
-              <h3>{servicesFind?.name}</h3>
-              <h5 className="text-center">$ {servicesFind?.price}</h5>
+
+            <div
+              className=""
+              style={{ display: shippingData ? "block" : "none" }}
+            >
+              <h1 className="pb-5">Please Pay</h1>
+              <div className="processPayment bg-danger pt-5">
+                <ProcessPayment
+                  handlePayment={handlePaymentSuccess}
+                ></ProcessPayment>
+              </div>
             </div>
-            <ProcessPayment
-              handlePayment={handlePaymentSuccess}
-            ></ProcessPayment>
           </div>
-        </div>
+          <div className="col-5">
+            <img
+              className="img-fluid mt-5 pb-5"
+              style={{ width: "400px" }}
+              src={servicesFind?.imageURL}
+              alt=""
+            />
+            <h3 className="mt-1">{servicesFind?.name}</h3>
+            <h5 className="Productprice">$ {servicesFind?.price}</h5>
+          </div>
+        </section>
       </section>
     </main>
   );
