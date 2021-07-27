@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import { UserContext } from "../../../App";
+import Navbar from "../../Home/Navbar/Navbar";
 import ProcessPayment from "../../ProcessPayment/ProcessPayment";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Book.css";
+
 const Book = () => {
   const { _id } = useParams();
   console.log(_id);
@@ -54,43 +56,24 @@ const Book = () => {
       }
     });
   };
-  //style={{ boxShadow: "0 0 10px grey" }}
 
   return (
-    <div className="row">
-      <div
-        className="col-md-6 mt-5 rounded-3"
-        style={{ display: shippingData ? "none" : "block" }}
-      >
-        <div>
-          <div className="d-flex">
-            <div className="mt-3 mb-3">
-              <img
-                className="img-fluid"
-                style={{ width: "100px", borderRadius: "50%" }}
-                src={servicesFind?.imageURL}
-                alt=""
-              />
-            </div>
-            <div className="mt-3 mb-3 ms-3">
-              <h3>{servicesFind?.name}</h3>
-              <h5 className="text-center">$ {servicesFind?.price}</h5>
-            </div>
-          </div>
-        </div>
-        <div style={{ backgroundColor: "blue" }}>
+    <main>
+      <Navbar></Navbar>;
+      <section className="row">
+        <div className="col-6 bg-aqua" style={{ backgroundColor: "gray" }}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>First name</label>
             <input
               type="text"
               name="first"
-              {...register("first", { required: true, maxLength: 80 })}
+              {...register("first", { required: true })}
             />
             <label>Last name</label>
             <input
               type="text"
               name="last"
-              {...register("last", { required: true, maxLength: 100 })}
+              {...register("last", { required: true })}
             />
             <label>Email</label>
             <input
@@ -111,15 +94,24 @@ const Book = () => {
             <input type="submit" />
           </form>
         </div>
-      </div>
-      <div
-        className="col-md-6 mt-5"
-        style={{ display: shippingData ? "block" : "none" }}
-      >
-        <h1>Please Pay</h1>
-        <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
-      </div>
-    </div>
+        <div className="col-4 bg-blue">
+          <h1>Please Pay</h1>
+          <div className="mt-3 mb-3">
+            <img
+              className="img-fluid"
+              style={{ width: "100px", borderRadius: "50%" }}
+              src={servicesFind?.imageURL}
+              alt=""
+            />
+          </div>
+          <div className="mt-3 mb-3 ms-3">
+            <h3>{servicesFind?.name}</h3>
+            <h5 className="text-center">$ {servicesFind?.price}</h5>
+          </div>
+          <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
+        </div>
+      </section>
+    </main>
   );
 };
 
