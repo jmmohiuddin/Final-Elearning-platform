@@ -14,6 +14,7 @@ import Book from "./Components/Admin/Book/Book";
 import AddReview from "./Components/Admin/AddReview/AddReview";
 import AllOrderList from "./Components/Admin/AllOrderList/AllOrderList";
 import AllService from "./Components/Home/AllService/AllService";
+import Orders from "./Components/Admin/Orders/Orders";
 export const UserContext = createContext();
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
           </PrivateRoute>
           <Route path="/orderList">
             <OrderList />
+          </Route>
+          <Route path="/orders">
+            <Orders />
           </Route>
           <Route path="/addService">
             <AddService />

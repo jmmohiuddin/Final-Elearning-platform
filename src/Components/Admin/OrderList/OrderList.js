@@ -41,7 +41,7 @@ const OrderList = () => {
                 <div className="mt-3 mb-3 ms-3">
                   <h3 className="text-center">{order.service?.name}</h3>
                   <h5 className="text-center">$ {order.service?.price}</h5>
-                  <h6 className="text-center text-danger">
+                  <h6 className="text-center text-danger readonly">
                     Order Status: {order.status}
                   </h6>
                 </div>
