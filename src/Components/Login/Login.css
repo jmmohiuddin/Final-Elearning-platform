@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.containersed {
+  background-color: #ffffff;
+  padding: 50px;
+}
+
+/* @media only screen and (max-width: 500px) {
+  .logo {
+    width: 100px;
+    margin-left: 25px!important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .gBtn {
+     padding: 20px 20px 20px 20px !important;
+     border-radius:8px;
+     font-size: 16px !important;
+     -webkit-border-radius:8px;
+     -moz-border-radius:8px;
+     -ms-border-radius:8px;
+     -o-border-radius:8px;
+     width: 185%;
+}
+}
+@media only screen and (max-width: 500px) {
+  .fbBtn {
+     padding: 20px 20px 20px 20px !important;
+     border-radius:8px;
+     font-size: 16px!important ;
+     width: 185%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #submit {
+     padding: 6px 20px 20px 20px;
+     border-radius:8px;
+     font-size: 16px;
+     width:185%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .LoginSectionForm {
+    width: 100%;
+    display:flex;
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .LoginSection h1 {
+   font-size: 20px !important;
+   font-weight: 900;
+   width: 300px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .createAccount {
+   display: inline!important;
+   width: 100% !important;
+  }
+} */
+
+
+.GoogleFbSignIn {}
+
+.GoogleFbSignIn button {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#main {
+  margin-top: 100px;
+}
+.LoginSectionTitleLogo {
+font-size: 50px !important;
+letter-spacing: 5px;
+font-weight:900;
+margin-left: 50px;
+padding-bottom: 15px;
+}
+.LoginSectionForm input {
+padding: 20px 100px 20px 100px;
+ border-color: rgb(139, 216, 125);
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+  outline-style: none;
+  width:80%;
+  
+}
+.LoginSectionImage img{
+    margin-top: 266px;
+    margin-left: 0px;
+    height: 100%;
+    
+}
+#submit{
+/* padding: 16px 145px 16px 145px; */
+ background-color: rgb(103, 230, 80);
+ border-radius:8px;
+ -webkit-border-radius:8px;
+ -moz-border-radius:8px;
+ -ms-border-radius:8px;
+ -o-border-radius:8px;
+ outline-style: none;
+ border-color: rgb(139, 216, 125);
+ font-size: 25px;
+ color: white;
+
+}
+.gBtn {
+ padding: 16px 76px 17px 78px;
+ margin-bottom: 8px;
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  -ms-border-radius:8px;
+  -o-border-radius:8px;
+  outline-style: none;
+  border-color: rgb(139, 216, 125);
+ background-color: rgb(103, 230, 80);
+ font-size: 25px;
+  color: white;
+  margin-left: 67px;
+}
+.fbBtn {
+ padding: 16px 62px 16px 62px !important;
+   border-radius:8px;
+   -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+   -ms-border-radius:8px;
+   -o-border-radius:8px;
+   outline-style: none;
+   border-color: rgb(139, 216, 125);
+ background-color: rgb(103, 230, 80);
+ font-size: 25px;
+ padding: 15px 30px 15px 20px;
+ margin-bottom: 100px;
+ margin-top: 10px;
+  color: white;
+  margin-left: 68px;
+}
