@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     const eventData = {
       email: data.email,
     };
-    const url = `https://evening-basin-34226.herokuapp.com/addAdmin`;
+    const url = `http://localhost:5000/addAdmin`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -46,7 +46,8 @@ const MakeAdmin = () => {
               type="text"
               {...register("email", {
                 required: true,
-                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                pattern:
+                  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               })}
             />
           </div>

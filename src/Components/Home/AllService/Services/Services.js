@@ -7,7 +7,7 @@ const Services = () => {
   const { serviceOption } = useContext(UserContext);
   const [serviceFakeData, setServiceFakeData] = serviceOption;
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServiceFakeData(data));
   }, []);

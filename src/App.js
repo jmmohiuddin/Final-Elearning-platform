@@ -1,7 +1,6 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Admin from "./Components/Admin/Admin";
-import OrderList from "./Components/Admin/OrderList/OrderList";
 import AddService from "./Components/Admin/AddService/AddService";
 
 import Home from "./Components/Home/Home/Home";
@@ -15,11 +14,41 @@ import AddReview from "./Components/Admin/AddReview/AddReview";
 import AllOrderList from "./Components/Admin/AllOrderList/AllOrderList";
 import AllService from "./Components/Home/AllService/AllService";
 import Orders from "./Components/Admin/Orders/Orders";
+import { usePageVisibility } from "react-page-visibility";
 export const UserContext = createContext();
 
 function App() {
   const [loggedIn, setLoggedIn] = useState({});
   const [serviceFakeData, setServiceFakeData] = useState([]);
+
+  let isVisible = usePageVisibility();
+  if (!isVisible) {
+    // window.location.reload();
+    console.log(!isVisible);
+  }
+
+  if (isVisible) {
+    console.log(isVisible);
+    var postInfoVisible = {
+      id: 1,
+      title: "visible",
+      body: "bar",
+      userId: 1,
+    };
+  }
+
+  // function visible() {
+  //   fetch("http://localhost:5000/addReview", {
+  //     method: "post",
+  //     body: JSON.stringify(postInfoVisible),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((json) => console.log(json));
+  // }
+  // visible();
   return (
     <UserContext.Provider
       value={{
@@ -44,9 +73,6 @@ function App() {
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>
-          <Route path="/orderList">
-            <OrderList />
-          </Route>
           <Route path="/orders">
             <Orders />
           </Route>

@@ -17,7 +17,8 @@ const AddReview = () => {
       company: data.company,
       ...loggedIn,
     };
-    const url = `https://evening-basin-34226.herokuapp.com/addReview`;
+
+    const url = `http://localhost:5000/addReview`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -43,7 +44,10 @@ const AddReview = () => {
         <div className="col-md-2">
           <Sidebar></Sidebar>
         </div>
-        <div className="col-md-10" style={{ backgroundColor: "black" }}>
+        <div
+          className="col-md-10  bgContainer"
+          style={{ backgroundColor: "#58dd75d3" }}
+        >
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>Name</label>
             <input
@@ -57,7 +61,6 @@ const AddReview = () => {
               name="company"
               {...register("company", { required: true, maxLength: 120 })}
             />
-
             <label>Description</label>
             <textarea
               type="text"

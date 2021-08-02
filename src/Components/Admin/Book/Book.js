@@ -18,7 +18,7 @@ const Book = () => {
 
   const [specificService, setSpecificService] = useState([]);
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setSpecificService(data));
   }, []);
@@ -43,7 +43,7 @@ const Book = () => {
       orderTime: new Date(),
       paymentId,
     };
-    const url = `https://evening-basin-34226.herokuapp.com/addOrder`;
+    const url = `http://localhost:5000/addOrder`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -61,13 +61,16 @@ const Book = () => {
     <main>
       <Navbar></Navbar>;
       <section className="container-md">
-        <section className="row bg-secondary">
+        <section className="row bg-secondary pb-5 pt-5 mt-5 rounded">
           <div className="col-7 ">
             <div
               className=" mt-5 rounded-3 "
               style={{ display: shippingData ? "none" : "block" }}
             >
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                action="src\Components\Thankyou\Thank.html"
+              >
                 <label>First name</label>
                 <input
                   type="text"
@@ -104,8 +107,10 @@ const Book = () => {
               className=""
               style={{ display: shippingData ? "block" : "none" }}
             >
-              <h1 className="pb-5">Please Pay</h1>
-              <div className="processPayment bg-danger pt-5">
+              <h1 className="pb-1" style={{ color: "white" }}>
+                Please Pay
+              </h1>
+              <div className="processPayment bgStripe pt-5">
                 <ProcessPayment
                   handlePayment={handlePaymentSuccess}
                 ></ProcessPayment>

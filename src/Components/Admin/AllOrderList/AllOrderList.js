@@ -7,7 +7,7 @@ const AllOrderList = () => {
   const [update, setUpdate] = useState([]);
   console.log(update);
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/allOrderDetails")
+    fetch("http://localhost:5000/allOrderDetails")
       .then((res) => res.json())
       .then((data) => setAllOrder(data));
   }, []);
@@ -21,7 +21,7 @@ const AllOrderList = () => {
   };
 
   const handleClick = (id) => {
-    const url = `https://evening-basin-34226.herokuapp.com/update/${id}`;
+    const url = `http://localhost:5000/update/${id}`;
     fetch(url, {
       method: "POST",
       headers: {

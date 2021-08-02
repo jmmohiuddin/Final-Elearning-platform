@@ -9,7 +9,7 @@ const Sidebar = () => {
   const [loggedIn, setLoggedIn] = log;
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/isAdmin", {
+    fetch("http://localhost:5000/isAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email: loggedIn.email }),
@@ -21,16 +21,15 @@ const Sidebar = () => {
   return (
     <div>
       <div className="sidebar">
-        <Link className="active" to="/orderList">
+        <Link className="active" to="/orders">
           Order List
         </Link>
         <Link to="/addReview">AddReview</Link>
         {isAdmin && (
           <div>
-            <Link to="/addService">Add Service</Link>
+            <Link to="/addService">Add Book</Link>
             <Link to="/makeAdmin">Make Admin</Link>
             <Link to="/manageService">Manage Service</Link>
-
             <Link to="/allOrderList">All OrderList</Link>
           </div>
         )}

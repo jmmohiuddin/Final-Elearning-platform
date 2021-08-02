@@ -7,13 +7,13 @@ const ManageService = () => {
   console.log(services);
   // console.log(servicess.name)
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);
 
   const deleteEvent = (id) => {
-    fetch(`https://evening-basin-34226.herokuapp.com/delete/${id}`, {
+    fetch(`http://localhost:5000/delete/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -21,8 +21,7 @@ const ManageService = () => {
         if (data) {
           swal({
             title: "Are you sure?",
-            text:
-              "Once deleted, you will not be able to recover this imaginary file!",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
             dangerMode: true,

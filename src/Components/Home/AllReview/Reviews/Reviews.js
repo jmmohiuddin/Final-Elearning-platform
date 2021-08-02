@@ -10,7 +10,7 @@ import "./Reviews.css";
 const Reviews = () => {
   const [reviewData, setReviewData] = useState([]);
   useEffect(() => {
-    fetch("https://evening-basin-34226.herokuapp.com/allReviews")
+    fetch("http://localhost:5000/allReviews")
       .then((res) => res.json())
       .then((data) => setReviewData(data));
   }, []);
@@ -23,21 +23,21 @@ const Reviews = () => {
           className="text-center mt-5"
           style={{ borderBottom: "5px solid #f29702" }}
         >
-          <h3>What Client Says About Us</h3>
+          <h3>What Student Says About Us</h3>
         </div>
       </div>
 
       <div
         id="carouselExampleControls"
-        className="carousel slide"
+        className="carousel slide "
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <div className="container">
+        <div className="carousel-inner ">
+          <div className="carousel-item active ">
+            <div className="container ">
               <div className="row ms-5 mt-5">
                 {reviewData.map((review) => (
-                  <div className="col-md-4 ">
+                  <div className="col-md-4 mt-2">
                     <div className="card" style={{ width: "18rem" }}>
                       <div className="justify-content-center align-items-center d-flex mt-3">
                         <img
